@@ -1,0 +1,58 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+  <head>
+  <title>漂浮广告</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<link rel="stylesheet" href="css/ad.css"></link >
+
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js" type="text/javascript"></script>
+	<script type="text/javascript" src="js/floatingAd.js"></script>
+	<script type="text/javascript">
+	$(function(){
+		$.floatingAd({
+			//频率
+			delay: 60,
+			//超链接后是否关闭漂浮
+			isLinkClosed: true,
+			//漂浮内容
+			ad:	[{
+				//关闭区域背景透明度(0.1-1)
+				headFilter: 0.3,
+				//图片
+				'img': 'images/4.png',
+				//图片高度
+				'imgHeight': 124,
+				//图片宽度
+				'imgWidth': 104,
+				//图片链接
+				'linkUrl': 'http://www.jq-school.com/',
+				//浮动层级别
+				'z-index': 100,
+				//标题
+				'title': 'JquerySchool'
+			},
+			{
+				'img': 'images/3.png',
+				'imgHeight': 124,
+				'imgWidth': 104,
+				'linkUrl': 'http://www.jq-school.com/',
+				'z-index': 101,
+				'title': 'Jquery原创插件',
+				//关闭按键图片
+				'closed-icon': 'images/close.png'
+			}],
+			//关闭事件
+			onClose: function(elem){
+				//alert('关闭');
+			}
+		});
+		$("#aa").floatingAd({
+			onClose: function(elem){
+			}
+		});
+	});
+	</script>
+  </head>
+  <body style="height: 1000px;width: 2000px;">
+  </body>
+</html>
